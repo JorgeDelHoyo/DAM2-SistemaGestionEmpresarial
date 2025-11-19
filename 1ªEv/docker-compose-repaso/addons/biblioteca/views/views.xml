@@ -14,6 +14,9 @@
     <field name="arch" type="xml">
       <list>
         <field name="name" />
+        <field name="autor_id" />
+        <field name="editorial_id" />
+        <field name="etiqueta_id" widget="many2many_etiquetas" options="{'color-field': 'color'}" />
         <field name="genero" />
         <field name="precio" />
         <field name="activo" />
@@ -23,7 +26,7 @@
 
 
   <!-- Form view libros -->
-  <record id="libros_form" model="ir.ui.view">
+  <record id="view_libros_form" model="ir.ui.view">
     <field name="name">model_name.view.form</field>
     <field name="model">biblioteca.libro</field>
     <field name="arch" type="xml">
@@ -32,6 +35,8 @@
           <group>
             <group>
               <field name="name" />
+              <field name="autor_id" />
+              <field name="editorial_id" />
               <field name="genero" />
             </group>
             <group>
@@ -47,70 +52,157 @@
     </field>
   </record>
 
+
+  <!-- Action ventana socios -->
+  <record id="action_ventana_socios" model="ir.actions.act_window">
+    <field name="name">Socios</field>
+    <field name="res_model">biblioteca.socio</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <!-- Action vista socios-->
+  <record id="view_socio_list" model="ir.ui.view">
+    <field name="name">biblioteca.socio.list</field>
+    <field name="model">biblioteca.socio</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name" />
+        <field name="telefono" />
+        <field name="dni" />
+      </list>
+    </field>
+  </record>
+
+  <!-- Vista formulario socios-->
+  <record id="view_socio_form" model="ir.ui.view">
+    <field name="name">biblioteca.socio.form</field>
+    <field name="model">biblioteca.socio</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="telefono" />
+            <field name="dni" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Action prestamos-->
+  <record id="action_ventana_prestamos" model="ir.actions.act_window">
+    <field name="name">Prestamos</field>
+    <field name="res_model">biblioteca.prestamo</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <!-- Lista prestamos-->
+  <record id="view_prestamo_list" model="ir.ui.view">
+    <field name="name">biblioteca.prestamo.list</field>
+    <field name="model">biblioteca.prestamo</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="libro_id" />
+        <field name="socio_id" />
+        <field name="fecha_inicio" />
+        <field name="fecha_fin" />
+      </list>
+    </field>
+  </record>
+
+  <!-- Form prestamos-->
+  <record id="view_prestamo_form" model="ir.ui.view">
+    <field name="name">biblioteca.prestamo.form</field>
+    <field name="model">biblioteca.prestamo</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <group>
+              <field name="libro_id" />
+              <field name="socio_id" />
+            </group>
+            <group>
+              <field name="fecha_inicio" />
+              <field name="fecha_fin" />
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Action editorial-->
+  <record id="action_ventana_editorial" model="ir.actions.act_window">
+    <field name="name">Editoriales</field>
+    <field name="res_model">biblioteca.editorial</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <!-- List editorial-->
+  <record id="view_editorial_list" model="ir.ui.view">
+    <field name="name">biblioteca.editorial.list</field>
+    <field name="model">biblioteca.editorial</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name" />
+        <field name="pais" />
+      </list>
+    </field>
+  </record>
+
+  <!-- Form editorial-->
+  <record id="view_editorial_form" model="ir.ui.view">
+    <field name="name">biblioteca.editorial.list</field>
+    <field name="model">biblioteca.editorial</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="pais" />
+            <field name="website" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Action etiquetas-->
+  <record id="action_ventana_etiquetas" model="ir.actions.act_window">
+    <field name="name">Etiquetas</field>
+    <field name="res_model">biblioteca.etiqueta</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+
+  <!-- MenuItem-->
   <menuitem id="menu_biblioteca_root" name="Biblioteca"/>
-  <menuitem
-    id="menu_biblioteca_gestion"
-    name="Geston"
-    parent="menu_biblioteca_root"/>
+  <menuitem id="menu_biblioteca_gestion" name="Gestion" parent="menu_biblioteca_root"/>
   <menuitem
     id="menu_libros"
     name="Ver libros"
     action="action_ventana_libros"
     parent="menu_biblioteca_gestion"/>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="biblioteca.list">
-      <field name="name">biblioteca list</field>
-      <field name="model">biblioteca.biblioteca</field>
-      <field name="arch" type="xml">
-        <list>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </list>
-      </field>
-    </record>
--->
-
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="biblioteca.action_window">
-      <field name="name">biblioteca window</field>
-      <field name="res_model">biblioteca.biblioteca</field>
-      <field name="view_mode">list,form</field>
-    </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="biblioteca.action_server">
-      <field name="name">biblioteca server</field>
-      <field name="model_id" ref="model_biblioteca_biblioteca"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "list,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
-
-    <!-- Top menu item -->
-<!--
-    <menuitem name="biblioteca" id="biblioteca.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="biblioteca.menu_1" parent="biblioteca.menu_root"/>
-    <menuitem name="Menu 2" id="biblioteca.menu_2" parent="biblioteca.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="biblioteca.menu_1_list" parent="biblioteca.menu_1"
-              action="biblioteca.action_window"/>
-    <menuitem name="Server to list" id="biblioteca" parent="biblioteca.menu_2"
-              action="biblioteca.action_server"/>
--->
+  <menuitem
+    id="menu_socios"
+    name="Socios"
+    action="action_ventana_socios"
+    parent="menu_biblioteca_gestion"/>
+  <menuitem
+    id="menu_prestamos"
+    name="Prestamos"
+    action="biblioteca.action_ventana_prestamos"
+    parent="menu_biblioteca_gestion"/>
+  <menuitem
+    id="menu_editorial"
+    name="Editorial"
+    action="action_ventana_editorial"
+    parent="menu_biblioteca_gestion"/>
+  <menuitem
+    id="menu_etiquetas"
+    name="Etiquetas"
+    action="action_ventana_etiquetas"
+    parent="menu_biblioteca_gestion"/>
 </odoo>

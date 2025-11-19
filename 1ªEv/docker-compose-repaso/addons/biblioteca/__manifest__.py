@@ -27,5 +27,6 @@
         'views/views.xml',
         # 'views/templates.xml',
     ],
+    'application': True,
 }
 
