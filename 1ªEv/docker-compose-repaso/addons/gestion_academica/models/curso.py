@@ -7,8 +7,8 @@ class Curso(models.Model):
     name = fields.Char(string="Nombre del curso", required=True)
     creditos = fields.Float(string="Creditos del curso")
 
-    # Muchos cursos pueden ser impartidos por un profesor
-    profesor_id = fields.Many2one('academia.profesor', string='Profesor principal')
+    # Muchos cursos pueden ser impartidos por muchos profesores
+    profesor_ids = fields.Many2many('academia.profesor','curso_profesor_rel', string='Profesores Asignados')
 
     # Un curso puede tener varias matriculas de alumnos
     matricula_ids = fields.One2many('academia.matricula', 'curso_id', string='Matriculas')

@@ -14,7 +14,7 @@
       <list>
         <field name="name" />
         <field name="creditos" />
-        <field name="profesor_id" />
+        <field name="profesor_ids" />
         <field name="matricula_ids" />
       </list>
     </field>
@@ -29,7 +29,7 @@
           <group>
             <field name="name" />
             <field name="creditos" />
-            <field name="profesor_id" />
+            <field name="profesor_ids" />
             <field name="matricula_ids" />
           </group>
         </sheet>
