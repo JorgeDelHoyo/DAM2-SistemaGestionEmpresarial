@@ -1,0 +1,212 @@
+<odoo>
+
+  <!-- Curso (Action-List-Form)-->
+  <record id="curso_action" model="ir.actions.act_window">
+    <field name="name">Cursos</field>
+    <field name="res_model">academia.curso</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="curso_view_list" model="ir.ui.view">
+    <field name="name">academia.curso.list</field>
+    <field name="model">academia.curso</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name" />
+        <field name="creditos" />
+        <field name="profesor_id" />
+        <field name="matricula_ids" />
+      </list>
+    </field>
+  </record>
+
+  <record id="curso_view_form" model="ir.ui.view">
+    <field name="name">academia.curso.form</field>
+    <field name="model">academia.curso</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="creditos" />
+            <field name="profesor_id" />
+            <field name="matricula_ids" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Profesor (Action-List-Form)-->
+  <record id="profesor_action" model="ir.actions.act_window">
+    <field name="name">Profesores</field>
+    <field name="res_model">academia.profesor</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="profesor_view_list" model="ir.ui.view">
+    <field name="name">academia.profesor.list</field>
+    <field name="model">academia.profesor</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name" />
+        <field name="email" />
+        <field name="curso_ids" />
+        <field name="departamento_id" />
+      </list>
+    </field>
+  </record>
+  
+  <record id="profesor_view_form" model="ir.ui.view">
+    <field name="name">academia.profesor.form</field>
+    <field name="model">academia.profesor</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="email" />
+            <field name="curso_ids" />
+            <field name="departamento_id" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Alumno (Action-List-Form)-->
+  <record id="alumno_action" model="ir.actions.act_window">
+    <field name="name">Alumno</field>
+    <field name="res_model">academia.alumno</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="alumno_view_list" model="ir.ui.view">
+    <field name="name">academia.alumno.list</field>
+    <field name="model">academia.alumno</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name" />
+        <field name="fecha_nacimiento" />
+        <field name="edad_actual" />
+        <field name="matricula_ids" />
+      </list>
+    </field>
+  </record>
+
+  <record id="alumno_view_form" model="ir.ui.view">
+    <field name="name">academia.alumno.form</field>
+    <field name="model">academia.alumno</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="fecha_nacimiento" />
+            <field name="edad_actual" />
+            <field name="matricula_ids" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Matricula (Action-List-Form)-->
+  <record id="matricula_action" model="ir.actions.act_window">
+    <field name="name">Matriculas</field>
+    <field name="res_model">academia.matricula</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="matricula_view_list" model="ir.ui.view">
+    <field name="name">academia.matricula.list</field>
+    <field name="model">academia.matricula</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="fecha_matricula" />
+        <field name="estado" />
+        <field name="curso_id" />
+        <field name="alumno_id" />
+      </list>
+    </field>
+  </record>
+
+  <record id="matricula_view_form" model="ir.ui.view">
+    <field name="name">academia.matricula.form</field>
+    <field name="model">academia.matricula</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="fecha_matricula" />
+            <field name="estado" />
+            <field name="curso_id" />
+            <field name="alumno_id" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Departamento (Action-List-Form)-->
+  <record id="departamento_action" model="ir.actions.act_window">
+    <field name="name">Departamentos</field>
+    <field name="res_model">academia.departamento</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="departamento_view_list" model="ir.ui.view">
+    <field name="name">academia.departamento.list</field>
+    <field name="model">academia.departamento</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name" />
+        <field name="profesor_ids" />
+      </list>
+    </field>
+  </record>
+
+  <record id="departamento_view_form" model="ir.ui.view">
+    <field name="name">academia.departamento.form</field>
+    <field name="model">academia.departamento</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="profesor_ids" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- MENUITEMS -->
+  <menuitem id="academia_menu_root" name="Academia"/>
+  <menuitem id="gestionAcademia_menu" name="Gestion" parent="academia_menu_root"/>
+  <menuitem
+    id="curso_menu"
+    name="Cursos"
+    action="curso_action"
+    parent="gestionAcademia_menu"/>
+  <menuitem
+    id="profesor_menu"
+    name="Profesores"
+    action="profesor_action"
+    parent="gestionAcademia_menu"/>
+  <menuitem
+    id="alumno_menu"
+    name="Alumnos"
+    action="alumno_action"
+    parent="gestionAcademia_menu"/>
+  <menuitem
+    id="matricula_menu"
+    name="Matriculas"
+    action="matricula_action"
+    parent="gestionAcademia_menu"/>
+  <menuitem
+    id="departamento_menu"
+    name="Departamentos"
+    action="departamento_action"
+    parent="gestionAcademia_menu"/>
+</odoo>
