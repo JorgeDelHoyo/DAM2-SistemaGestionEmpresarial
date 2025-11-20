@@ -9,19 +9,22 @@ class Alumno(models.Model):
     name = fields.Char(string="Nombre del alumno", required=True)
     fecha_nacimiento = fields.Date(string="Fecha de Nacimiento")
 
-    # Calcular la edad
-    edad_actual = fields.Char(compute='_compute_edad_actual', string='Edad')
+    es_mayor_edad = fields.Boolean(compute='_compute_mayor_edad', string='Mayor de edad(+18)')
     
-    # Compute para calcular la edad
+    # Comprueba mediante la fecha de nacimiento introducida si es mayor de edad o no
     @api.depends('fecha_nacimiento')
-    def _compute_edad_actual(self):
-        today = date.today()
+    def _compute_mayor_edad(self):
+        hoy = date.today()
         for record in self:
             if record.fecha_nacimiento:
-                age = relativedelta(today, record.fecha_nacimiento).years
-                record.edad_actual = "f{age} años"
+                # Calcular la edad para la validacion
+                age = relativedelta(hoy, record.fecha_nacimiento).years
+
+                # Asignar valor boolean
+                record.es_mayor_edad = (age >= 18)
             else:
-                record.edad_actual = "Fecha no definida"
+                # Si la fecha no esta no es mayor de edad
+                record.es_mayor_edad = False
 
     # Un alumno tiene varias matriculas
     matricula_ids = fields.One2many('academia.matricula', 'alumno_id', string='Matriculas alumno')

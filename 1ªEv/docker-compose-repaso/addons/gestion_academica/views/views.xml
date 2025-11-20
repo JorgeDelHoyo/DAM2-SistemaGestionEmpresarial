@@ -88,7 +88,7 @@
       <list>
         <field name="name" />
         <field name="fecha_nacimiento" />
-        <field name="edad_actual" />
+        <field name="es_mayor_edad" />
         <field name="matricula_ids" />
       </list>
     </field>
@@ -103,7 +103,7 @@
           <group>
             <field name="name" />
             <field name="fecha_nacimiento" />
-            <field name="edad_actual" />
+            <field name="es_mayor_edad" />
             <field name="matricula_ids" />
           </group>
         </sheet>
