@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class Curso(models.Model):
     _name = 'academia.curso'
@@ -12,3 +13,9 @@ class Curso(models.Model):
 
     # Un curso puede tener varias matriculas de alumnos
     matricula_ids = fields.One2many('academia.matricula', 'curso_id', string='Matriculas')
+
+    @api.constrains('creditos')
+    def _check_creditos_positivos(self):
+        for record in self:
+            if record.creditos < 0:
+                raise ValidationError("LOS CRÉDITOS NO PUEDEN SER NEGATIVOS")
