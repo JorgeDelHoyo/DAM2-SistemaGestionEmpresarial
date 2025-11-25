@@ -1,0 +1,349 @@
+<odoo>
+  <!-- Bando -->
+  <record id="bando_action" model="ir.actions.act_window">
+    <field name="name">Bandos</field>
+    <field name="res_model">starwars.bando</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="bando_view_list" model="ir.ui.view">
+    <field name="name">starwars.bando.list</field>
+    <field name="model">starwars.bando</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name" />
+        <field name="description" />
+      </list>
+    </field>
+  </record>
+
+  <record id="bando_view_form" model="ir.ui.view">
+    <field name="name">starwars.bando.form</field>
+    <field name="model">starwars.bando</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="description" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Planeta -->
+  <record id="planeta_action" model="ir.actions.act_window">
+    <field name="name">Planetas</field>
+    <field name="res_model">starwars.planeta</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="planeta_view_list" model="ir.ui.view">
+    <field name="name">starwars.planeta.list</field>
+    <field name="model">starwars.planeta</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name" />
+        <field name="climate" />
+      </list>
+    </field>
+  </record>
+
+  <record id="planeta_view_form" model="ir.ui.view">
+    <field name="name">starwars.planeta.form</field>
+    <field name="model">starwars.planeta</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="climate" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- TipoNave -->
+    <record id="tipoNave_action" model="ir.actions.act_window">
+      <field name="name">Tipos de naves</field>
+      <field name="res_model">starwars.tipo.nave</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="tipoNave_view_list" model="ir.ui.view">
+      <field name="name">starwars.tipo.nave.list</field>
+      <field name="model">starwars.tipo.nave</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name" />
+          <field name="fuerza_fuego" />
+          <field name="es_hipervelocidad" />
+        </list>
+      </field>
+    </record>
+
+    <record id="tipoNave_view_form" model="ir.ui.view">
+      <field name="name">starwars.tipo.nave</field>
+      <field name="model">starwars.tipo.nave</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="fuerza_fuego" />
+              <field name="es_hipervelocidad" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+  <!-- Rango -->
+    <record id="rango_action" model="ir.actions.act_window">
+      <field name="name">Rangos</field>
+      <field name="res_model">starwars.rango</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="rango_view_list" model="ir.ui.view">
+      <field name="name">starwars.rango.list</field>
+      <field name="model">starwars.rango</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name" />
+          <field name="nivel_acceso" />
+        </list>
+      </field>
+    </record>
+
+    <record id="rango_view_form" model="ir.ui.view">
+      <field name="name">starwars.rango.form</field>
+      <field name="model">starwars.rango</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="nivel_acceso" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+  <!-- Piloto -->
+    <record id="piloto_action" model="ir.actions.act_window">
+      <field name="name">Pilotos</field>
+      <field name="res_model">starwars.piloto</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="piloto_view_list" model="ir.ui.view">
+      <field name="name">starwars.piloto.list</field>
+      <field name="model">starwars.piloto</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name" />
+          <field name="edad" />
+          <field name="bando_id" />
+          <field name="planeta_id" />
+          <field name="rango_id" />
+        </list>
+      </field>
+    </record>
+
+    <record id="piloto_view_form" model="ir.ui.view">
+      <field name="name">starwars.piloto.form</field>
+      <field name="model">starwars.piloto</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="edad" />
+              <field name="bando_id" />
+              <field name="planeta_id" />
+              <field name="rango_id" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+  <!-- Nave -->
+    <record id="nave_action" model="ir.actions.act_window">
+      <field name="name">Naves</field>
+      <field name="res_model">starwars.nave</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="nave_view_list" model="ir.ui.view">
+      <field name="name">starwars.nave.list</field>
+      <field name="model">starwars.nave</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name" />
+          <field name="tipo_id" />
+          <field name="piloto_id" />
+          <field name="estado" />
+          <field name="escudos" />
+          <field name="mision_ids" />
+        </list>
+      </field>
+    </record>
+
+    <record id="nave_view_form" model="ir.ui.view">
+      <field name="name">starwars.nave.form</field>
+      <field name="model">starwars.nave</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="tipo_id" />
+              <field name="piloto_id" />
+              <field name="estado" />
+              <field name="escudos" />
+              <field name="mision_ids" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  
+  <!-- Mision -->
+    <record id="mision_action" model="ir.actions.act_window">
+      <field name="name">Misiones</field>
+      <field name="res_model">starwars.mision</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="mision_view_list" model="ir.ui.view">
+      <field name="name">starwars.mision.list</field>
+      <field name="model">starwars.mision</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name" />
+          <field name="fecha" />
+          <field name="nave_ids" />
+          <field name="puntos_totales" />
+        </list>
+      </field>
+    </record>
+
+    <record id="mision_view_form" model="ir.ui.view">
+      <field name="name">starwars.mision.form</field>
+      <field name="model">starwars.mision</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="fecha" />
+              <field name="nave_ids" />
+              <field name="puntos_totales" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+  <!-- MenuItem -->
+  <menuitem id="starwars_menu_root" name="StarWars"/>
+  <menuitem
+    id="gestor_menu" name="Gestor" parent="starwars_menu_root"/>
+  <menuitem
+    id="bando_menu"
+    name="Bando"
+    action="bando_action"
+    parent="gestor_menu"/>
+  <menuitem
+    id="planeta_menu"
+    name="Planetas"
+    action="planeta_action"
+    parent="gestor_menu"/>
+  <menuitem
+    id="tipoNave_menu"
+    name="Tipos de nave"
+    action="tipoNave_action"
+    parent="gestor_menu"/>
+  <menuitem
+    id="rango_menu"
+    name="Rangos"
+    action="rango_action"
+    parent="gestor_menu"/>
+  <menuitem
+    id="piloto_menu"
+    name="Pilotos"
+    action="piloto_action"
+    parent="gestor_menu"/>
+  <menuitem
+    id="nave_menu"
+    name="Naves"
+    action="nave_action"
+    parent="gestor_menu"/>
+  <menuitem
+    id="mision_menu"
+    name="Misiones"
+    action="mision_action"
+    parent="gestor_menu"/>
+
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="starwars.list">
+      <field name="name">starwars list</field>
+      <field name="model">starwars.starwars</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="starwars.action_window">
+      <field name="name">starwars window</field>
+      <field name="res_model">starwars.starwars</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="starwars.action_server">
+      <field name="name">starwars server</field>
+      <field name="model_id" ref="model_starwars_starwars"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="starwars" id="starwars.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="starwars.menu_1" parent="starwars.menu_root"/>
+    <menuitem name="Menu 2" id="starwars.menu_2" parent="starwars.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="starwars.menu_1_list" parent="starwars.menu_1"
+              action="starwars.action_window"/>
+    <menuitem name="Server to list" id="starwars" parent="starwars.menu_2"
+              action="starwars.action_server"/>
+-->
+</odoo>
