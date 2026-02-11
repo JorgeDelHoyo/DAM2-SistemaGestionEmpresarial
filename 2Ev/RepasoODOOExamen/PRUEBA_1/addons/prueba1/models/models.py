@@ -57,6 +57,3 @@ class Empresa(models.Model):
     # RELACIÓN ONE2MANY: Una empresa tiene muchos alumnos (hijos) asignados
     # Es la inversa del campo 'empresa_id' en el modelo 'prueba1.hijo'
     hijo_ids = fields.One2many('prueba1.hijo', 'empresa_id', string='Alumnos Asignados')
-    
-    
-    
