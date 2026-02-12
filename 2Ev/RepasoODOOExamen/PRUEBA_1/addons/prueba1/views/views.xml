@@ -1,146 +1,71 @@
 <odoo>
   <data>
 
-    <!-- VIEW PARA HIJOS (Alumnos) -->
-    <record id="prueba1_hijo_action" model="ir.actions.act_window">
-      <field name="name">Alumnos</field>
-      <field name="res_model">prueba1.hijo</field>
-      <field name="view_mode">list,form</field>
-    </record>
+    <odoo>
+  <data>
 
-    <record id="prueba1_hijo_view_list" model="ir.ui.view">
-      <field name="name">prueba1_hijo.view.list</field>
-      <field name="model">prueba1.hijo</field>
-      <field name="arch" type="xml">
-        <list string="Listado de Alumnos">
-          <field name="name" />
-          <field name="colegio" />
-          <field name="curso" />
-          <field name="empresa_id" />
-        </list>
-      </field>
-    </record>
-
-    <record id="prueba1_hijo_view_form" model="ir.ui.view">
-      <field name="name">prueba1_hijo.view.form</field>
-      <field name="model">prueba1.hijo</field>
-      <field name="arch" type="xml">
-        <form string="Ficha del Alumno">
-          <sheet>
-            <group>
-              <group>
-                <field name="name" />
-                <field name="fecha_nacimiento" />
-              </group>
-              <group>
-                <field name="colegio" />
-                <field name="curso" />
-                <field name="empresa_id" />
-              </group>
-              <group>
-                <field name="direccion" />
-              </group>
-            </group>
-          </sheet>
-        </form>
-      </field>
-    </record>
-
-    
-    <!-- Empresa -->
-    <record id="prueba1_empresa_action" model="ir.actions.act_window">
-      <field name="name">Empresas</field>
-      <field name="res_model">prueba1.empresa</field>
-      <field name="view_mode">kanban,list,form</field>
-    </record>
-
-    <record id="prueba1_empresa_view_list" model="ir.ui.view">
-      <field name="name">prueba1_empresa.view.list</field>
-      <field name="model">prueba1.empresa</field>
-      <field name="arch" type="xml">
-        <list string="Listado de Empresas">
-          <field name="name" />
-          <field name="rubro" />
-          <field name="ubicacion" />
-        </list>
-      </field>
-    </record>
-
-    <record id="prueba1_empresa_view_form" model="ir.ui.view">
-      <field name="name">prueba1_empresa.view.form</field>
-      <field name="model">prueba1.empresa</field>
-      <field name="arch" type="xml">
-        <form string="Ficha de Empresa">
-          <sheet>
-            <div class="oe_title">
-              <h1>
-                <field name="name" placeholder="Nombre de la empresa" />
-              </h1>
-            </div>
-            <group>
-              <group>
-                <field name="rubro" />
-                <field name="cif" />
-              </group>
-              <group>
-                <field name="ubicacion" />
-                <field name="metros_cuadrados" />
-              </group>
-            </group>
-          </sheet>
-        </form>
-      </field>
-    </record>
-
-    <record id="view_prueba1_empresa_kanban" model="ir.ui.view">
-        <field name="name">prueba1.empresa.kanban</field>
-        <field name="model">prueba1.empresa</field>
+    <record id="view_hijo_form" model="ir.ui.view">
+        <field name="name">examen.hijo.form</field>
+        <field name="model">examen.hijo</field>
         <field name="arch" type="xml">
-            <kanban>
-                <field name="id"/>
-                <field name="name"/>
-                <field name="rubro"/>
-                <field name="hijo_ids"/>
-                
-                <templates>
-                    <t t-name="card">
-                        <div class="oe_kanban_global_click o_kanban_record p-2">
-                            
-                            <div class="fw-bold mb-1">
-                                <field name="name"/>
-                            </div>
-
-                            <div class="text-muted small">
-                                <div>Rubro: <field name="rubro"/></div>
-                            </div>
-
-                            <div class="mt-2">
-                                <span class="badge rounded-pill text-bg-info">
-                                    Alumnos: <t t-esc="record.hijo_ids.raw_value.length"/>
-                                </span>
-                            </div>
-
-                        </div>
-                    </t>
-                </templates>
-            </kanban>
+            <form>
+                <sheet>
+                    <group>
+                        <group string="Datos Heredados">
+                            <field name="name"/>
+                            <field name="dni"/>
+                            <field name="edad"/>
+                            <field name="estado"/> </group>
+                        <group string="Datos Propios">
+                            <field name="curso"/>
+                            <field name="empresa_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
 
-    <menuitem id="prueba1_root_menu" name="Prueba 1"/>
-    <menuitem id="prueba1_gestion_menu" name="Gestión" parent="prueba1.prueba1_root_menu"/>
-    <menuitem
-      id="prueba1_empresa_menu"
-      name="Empresas"
-      action="prueba1_empresa_action"
-      parent="prueba1_gestion_menu"/>
-    
-    <menuitem
-      id="prueba1_hijo_menu"
-      name="Alumnos"
-      action="prueba1_hijo_action"
-      parent="prueba1_gestion_menu"/>
+    <record id="view_sindicalista_form" model="ir.ui.view">
+        <field name="name">examen.sindicalista.form</field>
+        <field name="model">examen.sindicalista</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group string="Datos de la Persona (Delegados)">
+                            <field name="name"/>
+                            <field name="dni"/>
+                            <field name="estado"/> 
+                        </group>
+                        <group string="Datos del Sindicato (Propios)">
+                            <field name="nombre_sindicato"/>
+                            <field name="cuota"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
+    <record id="action_hijo" model="ir.actions.act_window">
+        <field name="name">Alumnos (Hijo)</field>
+        <field name="res_model">examen.hijo</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_sindicalista" model="ir.actions.act_window">
+        <field name="name">Sindicalistas (Delegación)</field>
+        <field name="res_model">examen.sindicalista</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_examen_root" name="Examen Herencia"/>
+    <menuitem id="menu_hijo" parent="menu_examen_root" action="action_hijo"/>
+    <menuitem id="menu_sindicalista" parent="menu_examen_root" action="action_sindicalista"/>
+
+  </data>
+</odoo>
     <!-- explicit list view definition -->
 <!--
     <record model="ir.ui.view" id="prueba1.list">

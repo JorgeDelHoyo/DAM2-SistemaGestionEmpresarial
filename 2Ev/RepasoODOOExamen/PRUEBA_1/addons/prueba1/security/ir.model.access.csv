@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_prueba1_empresa,prueba1.empresa,model_prueba1_empresa,base.group_user,1,1,1,1
 access_prueba1_persona,prueba1.persona,model_prueba1_persona,base.group_user,1,1,1,1
 access_prueba1_hijo,prueba1.hijo,model_prueba1_hijo,base.group_user,1,1,1,1
-access_prueba1_empresa,prueba1.empresa,model_prueba1_empresa,base.group_user,1,1,1,1
+access_prueba1_sindicalista,prueba1.sindicalista,model_prueba1_sindicalista,base.group_user,1,1,1,1

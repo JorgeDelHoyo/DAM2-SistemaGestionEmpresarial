@@ -1,13 +1,13 @@
 {
     'name': "prueba1",
 
-    'summary': "Prueba1 module para Odoo19",
+    'summary': "Prueba 1 sobre herencia y campos relacionados",
 
     'description': """
-    Modulo de prueba para el examen de SGE
+Prueba 1 sobre herencia y campos relacionados
     """,
 
-    'author': "Jorge del Hoyo",
+    'author': "Jorge del Hoyo Ballestín",
     'website': "https://www.youtube.com",
 
     # Categories can be used to filter modules in modules listing
@@ -29,8 +29,5 @@
     'demo': [
         'demo/demo.xml',
     ],
-
-    'application': True,
-    'installable': True,
 }
 
