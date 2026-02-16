@@ -6,12 +6,7 @@
         <field name="model">prueba1.persona</field>
         <field name="arch" type="xml">
             <search string="Buscar Personas">
-                <field name="name" />
-                
                 <filter name="filtro_jubilado" string="Jubilados" domain="[('rol', '=', 'jubilado')]" />
-                
-                <separator/>
-                
                 <filter name="agrupar_rol" string="Agrupar por Rol" context="{'group_by': 'rol'}" />
             </search>
         </field>
@@ -21,22 +16,27 @@
         <field name="name">persona.view.kanban</field>
         <field name="model">prueba1.persona</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="rol">
+            <!-- <kanban default_group_by="rol"-->
+            <kanban>
+                <!-- <field name="id" /> <field name="name" /> -->
                 <field name="rol" />
-                <field name="id" />
-                <field name="name" />
-                <field name="edad" />
+                <field name="edad" />  
                 <templates>
                     <t t-name="card">
                         <div class="d-flex flex-column p-2">
-                            <div class="fw-bold">
+                            <div class="fw-bold fs-5">
                                 <field name="name" />
                             </div>
-                            <div>
-                                <span>Edad: <field name="edad" /></span>
+                            <div class="mt-2">
+                                <t t-if="record.edad.raw_value &lt; 18">
+                                    <span>Niño (<field name="edad" /> años)</span>
+                                </t>
+                                <t t-else="">
+                                    <span>Adulto (<field name="edad"/> años)</span>
+                                </t>
                             </div>
                             <div class="mt-2">
-                                <field name="rol" widget="label_selection" options="{'classes':{'estudiante':'info','jubilado':'warning','trabajador':'success'}}" />
+                                <span>Rol: <field name="rol" /></span>
                             </div>
                         </div>
                     </t>
@@ -49,8 +49,8 @@
         <field name="name">Gestión de Personas</field>
         <field name="res_model">prueba1.persona</field>
         <field name="view_mode">kanban,list,form</field>
-        <field name="search_view_id" ref="persona_view_search"/>
-        <field name="context">{'search_default_agrupar_rol': 1}</field>
+        <!-- <field name="search_view_id" ref="persona_view_search"/> -->
+        <!-- <field name="context">{'search_default_agrupar_rol': 1}</field> -->
     </record>
 
     <menuitem id="root_menu" name="Prueba1"/>
