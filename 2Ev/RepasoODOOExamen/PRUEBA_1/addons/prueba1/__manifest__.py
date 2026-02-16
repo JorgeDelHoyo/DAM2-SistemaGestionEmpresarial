@@ -1,14 +1,14 @@
 {
     'name': "prueba1",
 
-    'summary': "Prueba 1 sobre herencia y campos relacionados",
+    'summary': "Prueba 1 para repasar herencia etc",
 
     'description': """
-Prueba 1 sobre herencia y campos relacionados
+        Probamos módulos básicos
     """,
 
     'author': "Jorge del Hoyo Ballestín",
-    'website': "https://www.youtube.com",
+    'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -22,12 +22,15 @@ Prueba 1 sobre herencia y campos relacionados
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/persona_kanban.xml',
+        'reports/informe_empresa.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+
+    'application': True,
+    'installable': True,
 }
 

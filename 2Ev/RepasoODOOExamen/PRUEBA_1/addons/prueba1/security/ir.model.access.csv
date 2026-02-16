@@ -1,5 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_prueba1_empresa,prueba1.empresa,model_prueba1_empresa,base.group_user,1,1,1,1
-access_prueba1_persona,prueba1.persona,model_prueba1_persona,base.group_user,1,1,1,1
-access_prueba1_hijo,prueba1.hijo,model_prueba1_hijo,base.group_user,1,1,1,1
-access_prueba1_sindicalista,prueba1.sindicalista,model_prueba1_sindicalista,base.group_user,1,1,1,1
+acceso_persona_todos,persona.todos,model_prueba1_persona,base.group_user,1,1,1,1
+acceso_empresa_todos,empresa.todos,model_prueba1_empresa,base.group_user,1,1,1,1
+acceso_alumno_todos,alumno.todos,model_prueba1_alumno,base.group_user,1,1,1,1
+acceso_negocio_todos,negocio.todos,model_prueba1_negocio,base.group_user,1,1,1,1
+acceso_trabajador_todos,trabajador.todos,model_prueba1_trabajador,base.group_user,1,1,1,1
+acceso_sindicalista_todos,sindicalista.todos,model_prueba1_sindicalista,base.group_user,1,1,1,1

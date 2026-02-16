@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="persona_view_search" model="ir.ui.view">
+        <field name="name">persona.view.search</field>
+        <field name="model">prueba1.persona</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Personas">
+                <field name="name" />
+                
+                <filter name="filtro_jubilado" string="Jubilados" domain="[('rol', '=', 'jubilado')]" />
+                
+                <separator/>
+                
+                <filter name="agrupar_rol" string="Agrupar por Rol" context="{'group_by': 'rol'}" />
+            </search>
+        </field>
+    </record>
+
+    <record id="persona_view_kanban" model="ir.ui.view">
+        <field name="name">persona.view.kanban</field>
+        <field name="model">prueba1.persona</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="rol">
+                <field name="rol" />
+                <field name="id" />
+                <field name="name" />
+                <field name="edad" />
+                <templates>
+                    <t t-name="card">
+                        <div class="d-flex flex-column p-2">
+                            <div class="fw-bold">
+                                <field name="name" />
+                            </div>
+                            <div>
+                                <span>Edad: <field name="edad" /></span>
+                            </div>
+                            <div class="mt-2">
+                                <field name="rol" widget="label_selection" options="{'classes':{'estudiante':'info','jubilado':'warning','trabajador':'success'}}" />
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="persona_action" model="ir.actions.act_window">
+        <field name="name">Gestión de Personas</field>
+        <field name="res_model">prueba1.persona</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="search_view_id" ref="persona_view_search"/>
+        <field name="context">{'search_default_agrupar_rol': 1}</field>
+    </record>
+
+    <menuitem id="root_menu" name="Prueba1"/>
+    <menuitem id="persona_menu" name="Personas" action="persona_action" parent="root_menu"/>
+</odoo>

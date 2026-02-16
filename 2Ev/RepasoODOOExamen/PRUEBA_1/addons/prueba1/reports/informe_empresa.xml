@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_empresa" model="ir.actions.report">
+        <field name="name">Informe de Empresa y Alumnos</field>
+        <field name="model">prueba1.empresa</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">prueba1.plantilla_empresa</field>
+        <field name="report_file">prueba1.plantilla_empresa</field>
+        <field name="print_report_name">'%s' % object.name</field>
+        <field name="binding_model_id" ref="model_prueba1_empresa"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="plantilla_empresa">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Empresa: <span t-field="o.name" /></h2>
+                        <p>Sector: <span t-field="o.sector" /></p>
+                        <p>CIF: <span t-field="o.cif" /></p>
+
+                        <h4>Listado de Alumnos Asignados</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre Alumno</th>
+                                    <th>Edad</th>
+                                    <th>Curso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.alumno_ids" t-as="alumno">
+                                    <td><span t-field="alumno.name" /></td>
+                                    <td><span t-field="alumno.edad" /></td>
+                                    <td><span t-field="alumno.curso" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
