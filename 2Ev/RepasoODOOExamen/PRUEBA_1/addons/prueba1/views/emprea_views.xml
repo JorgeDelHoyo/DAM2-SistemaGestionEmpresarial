@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="persona_view_form" model="ir.ui.view">
+        <field name="name">persona.view.form</field>
+        <field name="model">prueba1.persona</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1><field name="name" placeholder="Nombre completo" /></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="fecha_nacimiento" />
+                            <field name="edad" />
+                        </group>
+                        <group>
+                            <field name="rol" />
+                            <field name="etapa" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="alumno_view_form" model="ir.ui.view">
+        <field name="name">alumno.view.form</field>
+        <field name="model">prueba1.alumno</field>
+        <field name="inherit_id" ref="prueba1.persona_view_form" ></field>
+        <field name="arch" type="xml">
+            <field name="rol">
+                <field name="curso_escolar" />
+                <field name="empresa_id" />
+            </field>    
+        </field>
+    </record>
+
+    <record id="empresa_view_form" model="ir.ui.view">
+        <field name="name">empresa.view.form</field>
+        <field name="model">prueba1.empresa</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                    </group>
+                    <notebook>
+                        <page string="Alumnos">
+                            <field name="alumno_ids">
+                                <list editable="bottom">
+                                    <field name="name" />
+                                    <field name="curso_escolar" />
+                                    <field name="edad" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sindicalista_view_form" model="ir.ui.view">
+        <field name="name">sindicalista.view.form</field>
+        <field name="model">prueba1.sindicalista</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>Ficha Sindical</h1>
+                    </div>
+                    <group>
+                        <field name="name" placeholder="Nombre (Viene de Persona/Trabajador)" />
+                        <field name="puesto" placeholder="Puesto (Viene de Trabajador)" />
+                        <field name="seccion_sindical" placeholder="Seccion (Propio del Sindicalista)" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="empresa_action" model="ir.actions.act_window">
+        <field name="name">Empresas</field>
+        <field name="res_model">prueba1.empresa</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="sindicalista_action" model="ir.actions.act_window">
+        <field name="name">Sindicalistas</field>
+        <field name="res_model">prueba1.sindicalista</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="empresa_menu" name="Empresas" action="empresa_action" parent="root_menu"/>
+    <menuitem id="sindicalista_menu" name="Sindicalistas" action="sindicalista_action" parent="root_menu"/>
+</odoo>

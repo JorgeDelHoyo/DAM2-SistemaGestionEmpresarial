@@ -2,7 +2,7 @@
 <odoo>
 
     <record id="action_report_empresa" model="ir.actions.report">
-        <field name="name">Informe de Empresa y Alumnos</field>
+        <field name="name">Informe Alumnos por Empresa</field>
         <field name="model">prueba1.empresa</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">prueba1.plantilla_empresa</field>
@@ -17,24 +17,23 @@
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <h2>Empresa: <span t-field="o.name" /></h2>
-                        <p>Sector: <span t-field="o.sector" /></p>
-                        <p>CIF: <span t-field="o.cif" /></p>
+                        <h2>Empresa: <field name="o.name" /></h2>
+                        <p>Sector: <field name="o.sector" /></p>
 
-                        <h4>Listado de Alumnos Asignados</h4>
+                        <h4>Alumnos en prácticas:</h4>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Nombre Alumno</th>
-                                    <th>Edad</th>
+                                    <th>Nombre</th>
                                     <th>Curso</th>
+                                    <th>Edad</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr t-foreach="o.alumno_ids" t-as="alumno">
                                     <td><span t-field="alumno.name" /></td>
+                                    <td><span t-field="alumno.curso_escolar" /></td>
                                     <td><span t-field="alumno.edad" /></td>
-                                    <td><span t-field="alumno.curso" /></td>
                                 </tr>
                             </tbody>
                         </table>

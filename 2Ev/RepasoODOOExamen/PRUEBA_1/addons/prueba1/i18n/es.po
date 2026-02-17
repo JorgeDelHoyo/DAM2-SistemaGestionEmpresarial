@@ -1,0 +1,348 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* prueba1
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20251106\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-17 19:10+0000\n"
+"PO-Revision-Date: 2026-02-17 19:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: prueba1
+#: model:ir.actions.report,print_report_name:prueba1.action_report_empresa
+msgid "'%s' % object.name"
+msgstr "'%s' % object.name"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.persona_view_kanban
+msgid "<span>Adulto</span>"
+msgstr "<span>Adulto</span>"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.persona_view_kanban
+msgid "<span>Menor</span>"
+msgstr "<span>Menor</span>"
+
+#. module: prueba1
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_alumno__etapa__adulto
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_persona__etapa__adulto
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_trabajador__etapa__adulto
+msgid "Adulto"
+msgstr "Adulto"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.persona_view_search
+msgid "Agrupar por Etapa"
+msgstr "Agrupar por Etapa"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.persona_view_search
+msgid "Agrupar por Rol"
+msgstr "Agrupar por Rol"
+
+#. module: prueba1
+#: model:ir.model,name:prueba1.model_prueba1_alumno
+msgid "Alumno"
+msgstr "Alumno"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.empresa_view_form
+msgid "Alumnos"
+msgstr "Alumnos"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_empresa__alumno_ids
+msgid "Alumnos en prácticas"
+msgstr "Alumnos en prácticas"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.plantilla_empresa
+msgid "Alumnos en prácticas:"
+msgstr "Alumnos en prácticas:"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.persona_view_search
+msgid "Buscar Personas"
+msgstr "Buscar Personas"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_empresa__cif
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_negocio__cif
+msgid "CIF"
+msgstr "CIF"
+
+#. module: prueba1
+#: model:ir.model,name:prueba1.model_prueba1_persona
+msgid "Clase Base Persona"
+msgstr "Clase Base Persona"
+
+#. module: prueba1
+#: model:ir.model,name:prueba1.model_prueba1_negocio
+msgid "Clase Negocio General"
+msgstr "Clase Negocio General"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_alumno__create_uid
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_empresa__create_uid
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_negocio__create_uid
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_persona__create_uid
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__create_uid
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_trabajador__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_alumno__create_date
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_empresa__create_date
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_negocio__create_date
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_persona__create_date
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__create_date
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_trabajador__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.plantilla_empresa
+msgid "Curso"
+msgstr "Curso"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_alumno__curso_escolar
+msgid "Curso actual"
+msgstr "Curso actual"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_alumno__display_name
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_empresa__display_name
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_negocio__display_name
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_persona__display_name
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__display_name
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_trabajador__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.plantilla_empresa
+msgid "Edad"
+msgstr "Edad"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_alumno__empresa_id
+msgid "Empresa Asignada"
+msgstr "Empresa Asignada"
+
+#. module: prueba1
+#: model:ir.model,name:prueba1.model_prueba1_empresa
+msgid "Empresa específica"
+msgstr "Empresa específica"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.plantilla_empresa
+msgid "Empresa:"
+msgstr "Empresa:"
+
+#. module: prueba1
+#: model:ir.actions.act_window,name:prueba1.empresa_action
+#: model:ir.ui.menu,name:prueba1.empresa_menu
+msgid "Empresas"
+msgstr "Empresas"
+
+#. module: prueba1
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_alumno__rol__estudiante
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_persona__rol__estudiante
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_trabajador__rol__estudiante
+msgid "Estudiante"
+msgstr "Estudiante"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_alumno__fecha_nacimiento
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_persona__fecha_nacimiento
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__fecha_nacimiento
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_trabajador__fecha_nacimiento
+msgid "Fecha de Nacimiento"
+msgstr "Fecha de Nacimiento"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.sindicalista_view_form
+msgid "Ficha Sindical"
+msgstr "Ficha Sindical"
+
+#. module: prueba1
+#: model:ir.actions.act_window,name:prueba1.persona_action
+msgid "Gestión de Personas"
+msgstr "Gestión de Personas"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_alumno__id
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_empresa__id
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_negocio__id
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_persona__id
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__id
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_trabajador__id
+msgid "ID"
+msgstr "ID"
+
+#. module: prueba1
+#: model:ir.actions.report,name:prueba1.action_report_empresa
+msgid "Informe Alumnos por Empresa"
+msgstr "Informe Alumnos por Empresa"
+
+#. module: prueba1
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_alumno__rol__jubilado
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_persona__rol__jubilado
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_trabajador__rol__jubilado
+msgid "Jubilado"
+msgstr "Jubilado"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.persona_view_search
+msgid "Jubilados"
+msgstr "Jubilados"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_alumno__write_uid
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_empresa__write_uid
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_negocio__write_uid
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_persona__write_uid
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__write_uid
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_trabajador__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_alumno__write_date
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_empresa__write_date
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_negocio__write_date
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_persona__write_date
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__write_date
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_trabajador__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: prueba1
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_alumno__etapa__menor
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_persona__etapa__menor
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_trabajador__etapa__menor
+msgid "Menor"
+msgstr "Menor"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_alumno__name
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_persona__name
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__name
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_trabajador__name
+#: model_terms:ir.ui.view,arch_db:prueba1.plantilla_empresa
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.sindicalista_view_form
+msgid "Nombre (Viene de Persona/Trabajador)"
+msgstr "Nombre (Viene de Persona/Trabajador)"
+
+#. module: prueba1
+#: model:ir.ui.menu,name:prueba1.persona_menu
+msgid "Personas"
+msgstr "Personas"
+
+#. module: prueba1
+#: model:ir.ui.menu,name:prueba1.root_menu
+msgid "Prueba1"
+msgstr "Prueba1"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.sindicalista_view_form
+msgid "Puesto (Viene de Trabajador)"
+msgstr "Puesto (Viene de Trabajador)"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__puesto
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_trabajador__puesto
+msgid "Puesto de Trabajo"
+msgstr "Puesto de Trabajo"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_empresa__name
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_negocio__name
+msgid "Razón Social"
+msgstr "Razón Social"
+
+#. module: prueba1
+#: model:ir.model,name:prueba1.model_prueba1_sindicalista
+msgid "Representante sindical"
+msgstr "Representante sindical"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.persona_view_kanban
+msgid "Rol:"
+msgstr "Rol:"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.sindicalista_view_form
+msgid "Seccion (Propio del Sindicalista)"
+msgstr "Sección (Propio del Sindicalista)"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__seccion_sindical
+msgid "Sección Sindical"
+msgstr "Sección Sindical"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_empresa__sector
+msgid "Sector"
+msgstr "Sector"
+
+#. module: prueba1
+#: model_terms:ir.ui.view,arch_db:prueba1.plantilla_empresa
+msgid "Sector:"
+msgstr "Sector:"
+
+#. module: prueba1
+#: model:ir.actions.act_window,name:prueba1.sindicalista_action
+#: model:ir.ui.menu,name:prueba1.sindicalista_menu
+msgid "Sindicalistas"
+msgstr "Sindicalistas"
+
+#. module: prueba1
+#: model:ir.model,name:prueba1.model_prueba1_trabajador
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_alumno__rol__trabajador
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_persona__rol__trabajador
+#: model:ir.model.fields.selection,name:prueba1.selection__prueba1_trabajador__rol__trabajador
+msgid "Trabajador"
+msgstr "Trabajador"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__trabajador_id
+msgid "Trabajadores"
+msgstr "Trabajadores"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_alumno__edad
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_persona__edad
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__edad
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_trabajador__edad
+msgid "edad"
+msgstr "Edad"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_alumno__etapa
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_persona__etapa
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__etapa
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_trabajador__etapa
+msgid "etapa"
+msgstr "Etapa"
+
+#. module: prueba1
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_alumno__rol
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_persona__rol
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_sindicalista__rol
+#: model:ir.model.fields,field_description:prueba1.field_prueba1_trabajador__rol
+msgid "rol"
+msgstr "Rol"

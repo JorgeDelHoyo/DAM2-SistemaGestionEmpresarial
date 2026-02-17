@@ -11,10 +11,11 @@ class Negocio(models.Model):
 # 2. Clase Hija (Empresa)
 class Empresa(models.Model):
     _name = 'prueba1.empresa'
-    _inherit = 'prueba1.negocio' # Hereda nombre y CIF
+    _inherit = 'prueba1.negocio' # Hereda nombre y CIF (Negocio -> Empresa)
     _description = 'Empresa específica'
 
     sector = fields.Char(string='Sector')
 
+    # Relación para el informe: Una empresa tiene muchos alumnos
     alumno_ids = fields.One2many('prueba1.alumno', 'empresa_id', string='Alumnos en prácticas')
     

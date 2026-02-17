@@ -30,3 +30,17 @@ class Persona(models.Model):
         for r in self:
             if r.edad < 0:
                 raise ValidationError("La edad no puede ser negativa")
+
+
+    etapa = fields.Selection([
+        ('menor', 'Menor'),
+        ('adulto', 'Adulto')
+    ], string='etapa', compute='_compute_etapa', store=True)
+
+    @api.depends('edad')
+    def _compute_etapa(self):
+        for r in self:
+            if r.edad < 18:
+                r.etapa = 'menor'
+            else:
+                r.etapa = 'adulto'

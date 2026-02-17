@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="persona_view_form" model="ir.ui.view">
+        <field name="name">persona.view.form</field>
+        <field name="model">repaso_examen.persona</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="nombre" />
+                    </group>
+                    <group>
+                        <field name="fecha_nacimiento" />
+                        <field name="edad" />
+                    </group>
+                    <group>
+                        <field name="rol" />
+                        <field name="etapa_vida" />
+                    </group>
+                    <group>
+                        <field name="empresa_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="persona_view_list" model="ir.ui.view">
+        <field name="name">persona.view.list</field>
+        <field name="model">repaso_examen.persona</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="nombre" />
+                <field name="fecha_nacimiento" />
+                <field name="edad" />
+                <field name="rol" />
+                <field name="etapa_vida" />
+                <field name="empresa_id" />
+            </list>
+        </field>
+    </record>
+
+    <record id="persona_view_search" model="ir.ui.view">
+        <field name="name">persona.view.search</field>
+        <field name="model">repaso_examen.persona</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Personas">
+                <filter name="filter_jubilado" string="Jubilados" domain="[('rol', '=', 'jubilado')]" />
+                <filter name="group_rol" string="Agrupar por rol" context="{'group_by': 'rol'}" />
+                <filter name="group_etapa" string="Agrupar por etapa" context="{'group_by': 'etapa_vida'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="persona_view_kanban" model="ir.ui.view">
+        <field name="name">persona.view.kanban</field>
+        <field name="model">repaso_examen.persona</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="edad" />
+                <field name="rol" />
+                <field name="nombre"/>
+                <field name="etapa_vida" />
+                <templates>
+                    <t t-name="card">
+                        <div>
+                            <strong><field name="nombre" /></strong>
+                            <div>
+                                <span><field name="rol" /></span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="persona_action" model="ir.actions.act_window">
+        <field name="name">Personas</field>
+        <field name="res_model">repaso_examen.persona</field>
+        <field name="view_mode">list,kanban,form</field>
+    </record>
+
+    <menuitem id="root_menu" name="Repaso Examen"/>
+    <menuitem
+        id="persona_menu"
+        name="Personas"
+        action="persona_action"
+        parent="root_menu"/>
+
+</odoo>

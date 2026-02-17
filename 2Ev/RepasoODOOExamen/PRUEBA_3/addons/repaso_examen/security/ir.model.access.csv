@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_repaso_examen_negocio,repaso_examen.negocio,model_repaso_examen_negocio,base.group_user,1,1,1,1
+access_repaso_examen_empresa,repaso_examen.empresa,model_repaso_examen_empresa,base.group_user,1,1,1,1
+access_repaso_examen_persona,repaso_examen.persona,model_repaso_examen_persona,base.group_user,1,1,1,1
+access_repaso_examen_trabajador,repaso_examen.trabajador,model_repaso_examen_trabajador,base.group_user,1,1,1,1
+access_repaso_examen_sindicalista,repaso_examen.sindicalista,model_repaso_examen_sindicalista,base.group_user,1,1,1,1

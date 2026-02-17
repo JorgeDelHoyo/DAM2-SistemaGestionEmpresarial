@@ -1,13 +1,13 @@
 {
-    'name': "prueba1",
+    'name': "repaso_examen",
 
-    'summary': "Prueba 1 para repasar herencia etc",
+    'summary': "Modulo para repasar el examen de herencia",
 
     'description': """
-        Probamos módulos básicos
+    Descripción para el módulo de herencia y todo
     """,
 
-    'author': "Jorge del Hoyo Ballestín",
+    'author': "Jorge del Hoyo",
     'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -22,16 +22,17 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/persona_kanban.xml',
+        'views/views.xml',
+        'views/templates.xml',
         'reports/informe_empresa.xml',
-        'views/emprea_views.xml',
+        'views/persona_views.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
 
-    'application': True,
     'installable': True,
+    'application': True
 }
 
