@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_evento" model="ir.actions.report">
+        <field name="name">Informe de Evento</field>
+        <field name="model">prueba4.evento</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">prueba4.report_evento</field>
+        <field name="report_file">prueba4.report_evento</field>
+        <field name="print_report_name">'%s' % object.name</field>
+        <field name="binding_model_id" ref="model_prueba4_evento"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_evento">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Evento: <span t-field="o.nombre" /></h2>
+                        <p><strong>Aforo máximo: </strong> <span t-field="o.capacidad_maxima" /></p>
+                        <p><strong>Tipo :</strong><span t-field="o.tipo" /></p>
+
+                        <h3>Lista de Asistentes</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre del asistente</th>
+                                    <th>DNI</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.asistente_ids" t-as="asistente">
+                                    <td><span t-field="asistente.nombre" /></td>
+                                    <td><span t-field="asistente.dni" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div>
+                            <strong>Plazas restantes:</strong><span t-field="o.plazas_disponibles" />
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

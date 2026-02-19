@@ -1,2 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_prueba4_prueba4,prueba4.prueba4,model_prueba4_prueba4,base.group_user,1,1,1,1
+access_evento_public,evento.public,model_prueba4_evento,base.group_public,1,0,0,0
+
+access_evento_user, evento.user,model_prueba4_evento,base.group_user,1,1,1,0
+access_asistente_user,asistente.user,model_prueba4_asistente,base.group_user,1,1,1,0
+
+access_evento_admin,evento.admin,model_prueba4_evento,base.group_erp_manager,1,1,1,1
+access_asistente_admin,evento.asistente,model_prueba4_asistente,base.group_erp_manager,1,1,1,1

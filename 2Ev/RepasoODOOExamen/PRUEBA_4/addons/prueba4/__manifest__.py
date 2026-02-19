@@ -1,13 +1,13 @@
 {
     'name': "prueba4",
 
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
+    'summary': "Repaso con vistas completas y seguridad",
 
     'description': """
-Long description of module's purpose
+    Repaso con todas las vistas
     """,
 
-    'author': "My Company",
+    'author': "Jorge del Hoyo Ballestín",
     'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -21,13 +21,17 @@ Long description of module's purpose
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/evento_views.xml',
+        'reports/informe_evento.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    'application': True,
+    'installable': True
 }
 

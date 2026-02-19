@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="evento_view_kanban" model="ir.ui.view">
+        <field name="name">evento.view.kanban</field>
+        <field name="model">prueba4.evento</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="tipo">
+                <field name="nombre" />
+                <field name="plazas_disponibles" />
+                <templates>
+                    <t t-name="card">
+                        <div>
+                            <strong><field name="nombre" /></strong>
+                            <div>
+                                <span>Plazas: <field name="plazas_disponibles" /></span>
+                                <span t-if="record.plazas_disponibles.raw_value &lt; 5" class="badge text-bg-danger" > !Últimas Plazas!</span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="evento_view_calendar" model="ir.ui.view">
+        <field name="name">evento.view.calendar</field>
+        <field name="model">prueba4.evento</field>
+        <field name="arch" type="xml">
+            <calendar string="Eventos" date_start="fecha_inicio" date_stop="fecha_fin" color="tipo">
+                <field name="nombre" />
+                <field name="plazas_disponibles" />
+            </calendar>
+        </field>
+    </record>
+
+    <record id="evento_view_list" model="ir.ui.view">
+        <field name="name">evento.view.tree</field>
+        <field name="model">prueba4.evento</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="nombre" />
+                <field name="capacidad_maxima" />
+                <field name="plazas_disponibles" />
+                <field name="fecha_inicio" />
+                <field name="fecha_fin" />
+                <field name="tipo" />
+                <field name="asistente_ids" />
+            </list>
+        </field>
+    </record>
+
+    <record id="evento_view_form" model="ir.ui.view">
+        <field name="name">evento.view.form</field>
+        <field name="model">prueba4.evento</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <h1><field name="nombre" /></h1>
+                    </group>
+                    <group>
+                        <field name="fecha_inicio" />
+                        <field name="fecha_fin" />
+                        <field name="tipo" />
+                        <field name="asistente_ids" />
+                    </group>
+                    <group>
+                        <field name="capacidad_maxima" />
+                        <field name="plazas_disponibles" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="evento_view_search" model="ir.ui.view">
+        <field name="name">evento.view.search</field>
+        <field name="model">prueba4.evento</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="plazas_libres" string="Hay Plazas Libres" domain="[('plazas_disponibles', '>', '0')]" />
+                <filter name="group_tipo" string="Agrupar por tipo" context="{'group_by': 'tipo'}" />
+            </search>
+        </field>
+    </record>
+
+    <record id="evento_view_graph" model="ir.ui.view">
+        <field name="name">evento.view.graph</field>
+        <field name="model">prueba4.evento</field>
+        <field name="arch" type="xml">
+            <graph string="Eventos por tipo" type="bar">
+                <field name="tipo" type="row" />
+                <field name="capacidad_maxima" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="evento_action" model="ir.actions.act_window">
+        <field name="name">Eventos</field>
+        <field name="res_model">prueba4.evento</field>
+        <field name="view_mode">list,form,kanban,calendar,graph</field>
+    </record>
+
+
+    <menuitem
+        id="root_menu"
+        name="Eventos Prueba4"/>
+    <menuitem
+        id="evento_menu"
+        name="Eventos"
+        action="evento_action"
+        parent="root_menu"
+        sequence="1"/>
+</odoo>
