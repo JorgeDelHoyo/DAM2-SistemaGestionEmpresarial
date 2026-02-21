@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_empresa" model="ir.actions.report">
+        <field name="name">Informe de la Empresa</field>
+        <field name="model">examen_empresa.empresa</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">examen_empresa.report_empresa</field>
+        <field name="report_file">examen_empresa.report_empresa</field>
+        <field name="print_report_name">'%s' % object.name</field>
+        <field name="binding_model_id" ref="model_examen_empresa_empresa"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_empresa">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                            <h1><span t-field="o.name" /></h1>
+                            <p>Sector: <span t-field="o.sector"/></p>
+                            <p>CIF: <span t-field="o.cif" /></p>
+
+                            <h3>Empleados</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre del empleado</th>
+                                        <th>Puesto</th>
+                                        <th>Fecha COntratación</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.empleado_ids" t-as="empleado">
+                                        <tr>
+                                            <td><span t-field="empleado.name" /></td>
+                                            <td><span t-field="empleado.puesto" /></td>
+                                            <td><span t-field="empleado.fecha_contrato" /></td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hospital_view_list" model="ir.ui.view">
+        <field name="name">hospital.view.tree</field>
+        <field name="model">examen_hospital.hospital</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="cantidad" />
+            </list>
+        </field>
+    </record>
+
+    <record id="hospital_view_form" model="ir.ui.view">
+        <field name="name">hospital.view.form</field>
+        <field name="model">examen_hospital.hospital</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <div>
+                        <h1><field name="name" /></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="cantidad" />
+                            <field name="tiene_comedor" />
+                        </group>
+                        <group string="Fechas Disponibilidad">
+                            <field name="fecha_entrada" />
+                            <field name="fecha_salida" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Pacientes">
+                            <field name="paciente_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hospital_view_calendar" model="ir.ui.view">
+        <field name="name">hospital.view.calendar</field>
+        <field name="model">examen_hospital.hospital</field>
+        <field name="arch" type="xml">
+            <calendar string="Ocupación hospitalaria" date_start="fecha_entrada" date_stop="fecha_salida" color="name">
+                <field name="name" />
+                <field name="cantidad" />
+            </calendar>
+        </field>
+    </record>
+
+    <record id="hospital_action" model="ir.actions.act_window">
+        <field name="name">Hospitales</field>
+        <field name="res_model">examen_hospital.hospital</field>
+        <field name="view_mode">list,form,calendar</field>
+    </record>
+
+    <menuitem id="root_menu" name="Gestión Sanitaria" sequence="10"/>
+    <menuitem
+        id="hospital_menu"
+        name="Hospitales"
+        action="hospital_action"
+        parent="root_menu"
+        sequence="10"/>
+        
+</odoo>

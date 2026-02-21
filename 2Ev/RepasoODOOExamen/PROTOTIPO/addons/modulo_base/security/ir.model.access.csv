@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_workplace_public,workplace.public,model_modulo_base_workplace,base.group_public,1,0,0,0
+access_persona_public,persona.public,model_modulo_base_persona,base.group_public,1,0,0,0
+access_sleepplace_public,sleepplace.public,model_modulo_base_sleepplace,base.group_public,1,0,0,0
+
+access_workplace_user,workplace.user,model_modulo_base_workplace,base.group_user,1,1,1,0
+access_persona_user,persona.user,model_modulo_base_persona,base.group_user,1,1,1,0
+access_sleepplace_user,sleepplace.user,model_modulo_base_sleepplace,base.group_user,1,1,1,0
+
+access_workplace_admin,workplace.admin,model_modulo_base_workplace,base.group_system,1,1,1,1
+access_persona_admin,persona.admin,model_modulo_base_persona,base.group_system,1,1,1,1
+access_sleepplace_admin,sleepplace.admin,model_modulo_base_sleepplace,base.group_system,1,1,1,1

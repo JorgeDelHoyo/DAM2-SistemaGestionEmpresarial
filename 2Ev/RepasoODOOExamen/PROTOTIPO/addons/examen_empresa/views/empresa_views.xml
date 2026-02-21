@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="empresa_view_list" model="ir.ui.view">
+        <field name="name">empresa.view.list</field>
+        <field name="model">examen_empresa.empresa</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="cif" />
+            </list>
+        </field>
+    </record>
+
+    <record id="empresa_view_form" model="ir.ui.view">
+        <field name="name">empresa.view.form</field>
+        <field name="model">examen_empresa.empresa</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <div>
+                        <h1><field name="name" placeholder="Nombre de la empresa" /></h1>
+                    </div>
+                    <group>
+                        <field name="cif" />
+                    </group>
+                    <notebook>
+                        <page string="Empleados">
+                            <field name="empleado_ids" >
+                                <list>
+                                    <field name="name" />
+                                    <field name="puesto" />
+                                    <field name="fecha_contrato" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="empresa_view_kanban" model="ir.ui.view">
+        <field name="name">empresa.view.kanban</field>
+        <field name="model">examen_empresa.empresa</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="sector">
+                <templates>
+                    <t t-name="card">
+                        <div>
+                            <h1><strong><field name="name" /></strong></h1>
+                        </div>
+                        <div>
+                            <span>CIF: <field name="cif" /></span>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="empresa_view_search" model="ir.ui.view">
+        <field name="name">empresa.view.search</field>
+        <field name="model">examen_empresa.empresa</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="group_sector" string="Agrupar por sector" context="{'group_by': 'sector'}" />
+            </search>
+        </field>
+    </record>
+
+    <record id="empresa_action" model="ir.actions.act_window">
+        <field name="name">Empresas</field>
+        <field name="res_model">examen_empresa.empresa</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+
+    <menuitem
+        id="root_menu"
+        name="Gestión Empresarial"
+        sequence="10"/>
+    <menuitem
+        id="empresa_menu"
+        name="Empresas"
+        action="empresa_action"
+        parent="root_menu"
+        sequence="10"/>
+
+</odoo>
