@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_examen_empresa_empleado_user,empleado.user,model_examen_empresa_empleado,base.group_user,1,1,1,0
+access_examen_empresa_empleado_admin,empleado.admin,model_examen_empresa_empleado,base.group_system,1,1,1,1
+
+access_examen_empresa_empresa_user,empresa.user,model_examen_empresa_empresa,base.group_user,1,1,1,0
+access_examen_empresa_empresa_admin,empresa.admin,model_examen_empresa_empresa,base.group_system,1,1,1,1

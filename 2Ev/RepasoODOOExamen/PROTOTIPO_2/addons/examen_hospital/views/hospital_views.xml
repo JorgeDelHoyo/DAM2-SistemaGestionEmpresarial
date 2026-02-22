@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hospital_view_list" model="ir.ui.view">
+        <field name="name">hospital.view.tree</field>
+        <field name="model">examen_hospital.hospital</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="camas_libres" />
+                <field name="cantidad_camas" />
+                <field name="paciente_ids" />
+            </list>
+        </field>
+    </record>
+
+    <record id="hospital_view_form" model="ir.ui.view">
+        <field name="name">hospital.view.form</field>
+        <field name="model">examen_hospital.hospital</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <header>
+                        <button string="Descargar informe" name="%(examen_hospital.action_report_hospital)d" type="action" class="oe_highlight"/>
+                    </header>
+                    <div>
+                        <h1><field name="name" /></h1>
+                    </div>
+                    <group>
+                        <field name="cantidad_camas" />
+                        <field name="aforo_base" />
+                        <field name="camas_libres" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hospital_action" model="ir.actions.act_window">
+        <field name="name">Hospital</field>
+        <field name="res_model">examen_hospital.hospital</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="root_menu"
+        name="Root hospital"
+        sequence="10"/>
+
+    <menuitem
+        id="hospital_menu"
+        name="Hospitales"
+        action="hospital_action"
+        parent="root_menu"
+        sequence="10"/>
+
+</odoo>

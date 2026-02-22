@@ -1,0 +1,211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* examen_hospital
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20251106\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-22 19:13+0000\n"
+"PO-Revision-Date: 2026-02-22 19:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: examen_hospital
+#: model:ir.actions.report,print_report_name:examen_hospital.action_report_hospital
+msgid "'%s' % object.name"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__aforo_base
+msgid "Aforo Base"
+msgstr ""
+
+#. module: examen_hospital
+#: model_terms:ir.ui.view,arch_db:examen_hospital.paciente_view_search
+msgid "Agrupar por gravedad"
+msgstr ""
+
+#. module: examen_hospital
+#: model_terms:ir.ui.view,arch_db:examen_hospital.report_hospital
+msgid "Cantidad Camas:"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__cantidad_camas
+msgid "Cantidad de camas"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__create_uid
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_paciente__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__create_date
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_paciente__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: examen_hospital
+#: model_terms:ir.ui.view,arch_db:examen_hospital.paciente_view_form
+msgid "Datos hospital"
+msgstr "Hospital Data"
+
+#. module: examen_hospital
+#: model_terms:ir.ui.view,arch_db:examen_hospital.paciente_view_form
+msgid "Datos personales"
+msgstr ""
+
+#. module: examen_hospital
+#: model_terms:ir.ui.view,arch_db:examen_hospital.hospital_view_form
+msgid "Descargar informe"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__display_name
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_paciente__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: examen_hospital
+#: model_terms:ir.ui.view,arch_db:examen_hospital.paciente_view_kanban
+msgid "Edad:"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_paciente__fecha_nacimiento
+msgid "Fecha de Nacimiento"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields.selection,name:examen_hospital.selection__examen_hospital_paciente__gravedad__grave
+msgid "Grave"
+msgstr ""
+
+#. module: examen_hospital
+#: model_terms:ir.ui.view,arch_db:examen_hospital.paciente_view_kanban
+msgid "Gravedad:"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.actions.act_window,name:examen_hospital.hospital_action
+#: model:ir.model,name:examen_hospital.model_examen_hospital_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_paciente__hospital_id
+msgid "Hospital"
+msgstr ""
+
+#. module: examen_hospital
+#: model_terms:ir.ui.view,arch_db:examen_hospital.report_hospital
+msgid "Hospital:"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.ui.menu,name:examen_hospital.hospital_menu
+msgid "Hospitales"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__id
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_paciente__id
+msgid "ID"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.actions.report,name:examen_hospital.action_report_hospital
+msgid "Informe del Hospital"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__write_uid
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_paciente__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__write_date
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_paciente__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields.selection,name:examen_hospital.selection__examen_hospital_paciente__gravedad__leve
+msgid "Leve"
+msgstr ""
+
+#. module: examen_hospital
+#: model_terms:ir.ui.view,arch_db:examen_hospital.paciente_view_search
+msgid "Mayores de Edad"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__name
+msgid "Nombre del Workplace"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model,name:examen_hospital.model_examen_hospital_paciente
+msgid "Paciente"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.actions.act_window,name:examen_hospital.paciente_action
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__paciente_ids
+msgid "Pacientes"
+msgstr ""
+
+#. module: examen_hospital
+#: model_terms:ir.ui.view,arch_db:examen_hospital.report_hospital
+msgid "Pacientes:"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__persona_ids
+msgid "Personas"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.ui.menu,name:examen_hospital.root_menu
+msgid "Root hospital"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__sleepplace_id
+msgid "SleepPlace"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_paciente__workplace_id
+msgid "WorkPlace"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__workplace_id
+msgid "Workplace"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_hospital__camas_libres
+msgid "camas_libres"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_paciente__edad
+msgid "edad"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_paciente__gravedad
+msgid "gravedad"
+msgstr ""
+
+#. module: examen_hospital
+#: model:ir.model.fields,field_description:examen_hospital.field_examen_hospital_paciente__name
+#: model:ir.ui.menu,name:examen_hospital.paciente_menu
+msgid "name"
+msgstr ""

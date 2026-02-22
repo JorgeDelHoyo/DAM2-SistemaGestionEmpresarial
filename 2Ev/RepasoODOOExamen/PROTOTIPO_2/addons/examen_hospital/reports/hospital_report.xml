@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_hospital" model="ir.actions.report">
+        <field name="name">Informe del Hospital</field>
+        <field name="model">examen_hospital.hospital</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">examen_hospital.report_hospital</field>
+        <field name="report_file">examen_hospital.report_hospital</field>
+        <field name="print_report_name">'%s' % object.name</field>
+        <field name="binding_model_id" ref="model_examen_hospital_hospital"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_hospital">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1>Hospital: <span t-field="o.name" /></h1>
+
+                        <p>Cantidad Camas: <span t-field="o.cantidad_camas" /></p>
+                        <h4>Pacientes:</h4>
+                        <t t-foreach="o.paciente_ids" t-as="paciente">
+                            <h5><span t-field="paciente.name" /></h5>
+                            <p><span t-field="paciente.edad" /></p>
+                            <p><span t-field="paciente.gravedad" /></p>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

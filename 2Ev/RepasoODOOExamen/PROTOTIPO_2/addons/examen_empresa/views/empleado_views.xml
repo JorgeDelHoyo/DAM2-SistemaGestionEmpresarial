@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="empleado_view_list" model="ir.ui.view">
+        <field name="name">empleado.view.list</field>
+        <field name="model">examen_empresa.empleado</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="edad" />
+                <field name="email" />
+                <field name="empresa_id" />
+                <field name="puesto" />
+                <field name="fecha_contrato" />
+            </list>
+        </field>
+    </record>
+
+    <record id="empleado_view_form" model="ir.ui.view">
+        <field name="name">empleado.view.form</field>
+        <field name="model">examen_empresa.empleado</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <div>
+                        <h1>Nombre: <field name="name" /></h1>
+                    </div>
+                    <group string="Datos Personales">
+                        <field name="fecha_nacimiento" />
+                        <field name="edad" />
+                        <field name="email" />
+                    </group>
+                    <group string="Empresa">
+                        <field name="empresa_id" />
+                        <field name="puesto" />
+                        <field name="fecha_contrato" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="empleado_view_kanban" model="ir.ui.view">
+        <field name="name">empleado.view.kanban</field>
+        <field name="model">examen_empresa.empleado</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="puesto" />
+                <field name="empresa_id"/>
+                <templates>
+                    <t t-name="card">
+                        <div>
+                            <h2><field name="name" /></h2>
+                            <div><field name="email" /></div>
+                            <div>Edad: <field name="edad" /></div>
+
+                            <div>
+                                <t t-if="record.puesto.raw_value == 'senior'">
+                                    <span>Senior</span>
+                                </t>
+                                <t t-elif="record.puesto.raw_value == 'mid'">
+                                    <span>Mid</span>
+                                </t>
+                                <t t-else="">
+                                    <span>Junior</span>
+                                </t>
+                            </div>
+
+                            <div>
+                                <t t-if="!record.empresa_id.raw_value">
+                                    <span>Sin empresa</span>
+                                </t>
+                                <t t-else="">
+                                    <span><field name="empresa_id" /></span>
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="empleado_view_calendar" model="ir.ui.view">
+        <field name="name">empleado.view.calendar</field>
+        <field name="model">examen_empresa.empleado</field>
+        <field name="arch" type="xml">
+            <calendar string="" date_start="fecha_contrato" color="name">
+                <field name="name" />
+                <field name="edad" />
+            </calendar>
+        </field>
+    </record>
+
+    <record id="empleado_view_search" model="ir.ui.view">
+        <field name="name">empleado.view.search</field>
+        <field name="model">examen_empresa.empleado</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="puesto" string="Agrupar por Puesto" context="{'group_by': 'puesto'}" />
+                <filter name="senior" string="Filtrar por Senior" domain="[('puesto', '=', 'senior')]" />
+                <filter name="mid" string="Filtrar por Mid" domain="[('puesto', '=', 'mid')]" />
+                <filter name="junior" string="Filtrar por Junior" domain="[('puesto', '=', 'junior')]" />
+            </search>
+        </field>
+    </record>
+
+    <record id="empleado_action" model="ir.actions.act_window">
+        <field name="name">Empleados</field>
+        <field name="res_model">examen_empresa.empleado</field>
+        <field name="view_mode">list,form,kanban,calendar</field>
+    </record>
+
+    <menuitem
+        id="empleado_menu"
+        name="Empleados"
+        action="empleado_action"
+        parent="root_menu"
+        sequence="20"/>
+</odoo>
